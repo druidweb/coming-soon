@@ -1,4 +1,4 @@
-name: Maintenance Branch Workflow
+name: maintenance branch workflow
 
 on:
   push:
