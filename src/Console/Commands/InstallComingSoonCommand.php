@@ -108,6 +108,12 @@ class InstallComingSoonCommand extends Command
       $relativePath = $file->getRelativePathname();
       $destinationPath = $destinationDir.'/'.$relativePath;
 
+      // Handle special case for gitignore.txt -> .gitignore
+      if ($relativePath === 'gitignore.txt') {
+        $destinationPath = $destinationDir.'/.gitignore';
+        $relativePath = '.gitignore';
+      }
+
       // Create subdirectories if they don't exist
       $destinationSubDir = dirname($destinationPath);
       if (! File::exists($destinationSubDir)) {

@@ -41,6 +41,7 @@ function cleanupTestFiles(): void
     resource_path('js/pages/Welcome.vue'),
     storage_path('app/public/img/bgtile.png'),
     storage_path('app/public/img/logo.svg'),
+    storage_path('app/public/.gitignore'),
   ];
 
   foreach ($filesToCleanup as $fileToCleanup) {

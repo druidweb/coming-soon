@@ -167,7 +167,11 @@
   }
 
   body {
-    @apply bg-background text-foreground bg-repeat;
+    @apply bg-background text-foreground;
+  }
+
+  .welcome-page {
+    @apply bg-repeat;
     background-image: url("/storage/img/bgtile.png");
   }
 }

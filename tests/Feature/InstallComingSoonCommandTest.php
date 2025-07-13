@@ -33,6 +33,7 @@ it('can install coming soon resources successfully', function (): void {
   expect(File::exists(resource_path('js/pages/Welcome.vue')))->toBeTrue();
   expect(File::exists(storage_path('app/public/img/bgtile.png')))->toBeTrue();
   expect(File::exists(storage_path('app/public/img/logo.svg')))->toBeTrue();
+  expect(File::exists(storage_path('app/public/.gitignore')))->toBeTrue();
 });
 
 it('can install only resources when assets-only flag is used', function (): void {
@@ -58,6 +59,7 @@ it('can install only assets when assets-only flag is used', function (): void {
   // Verify only assets were created
   expect(File::exists(storage_path('app/public/img/bgtile.png')))->toBeTrue();
   expect(File::exists(storage_path('app/public/img/logo.svg')))->toBeTrue();
+  expect(File::exists(storage_path('app/public/.gitignore')))->toBeTrue();
   expect(File::exists(resource_path('css/app.css')))->toBeFalse();
 });
 
@@ -65,27 +67,34 @@ it('prompts for confirmation when files already exist', function (): void {
   // Create existing files
   File::ensureDirectoryExists(resource_path('css'));
   File::ensureDirectoryExists(resource_path('js/pages'));
+  File::ensureDirectoryExists(storage_path('app/public'));
   File::put(resource_path('css/app.css'), 'existing content');
   File::put(resource_path('js/pages/Welcome.vue'), 'existing content');
+  File::put(storage_path('app/public/.gitignore'), 'existing gitignore');
 
   $this->artisan(InstallComingSoonCommand::class)
     ->expectsQuestion('File css/app.css already exists. Overwrite?', false)
     ->expectsQuestion('File js/pages/Welcome.vue already exists. Overwrite?', false)
+    ->expectsQuestion('File storage/.gitignore already exists. Overwrite?', false)
     ->expectsOutput('Skipped: css/app.css')
     ->expectsOutput('Skipped: js/pages/Welcome.vue')
+    ->expectsOutput('Skipped: storage/.gitignore')
     ->assertExitCode(0);
 
   // Verify files were not overwritten
   expect(File::get(resource_path('css/app.css')))->toBe('existing content');
   expect(File::get(resource_path('js/pages/Welcome.vue')))->toBe('existing content');
+  expect(File::get(storage_path('app/public/.gitignore')))->toBe('existing gitignore');
 });
 
 it('overwrites files when force flag is used', function (): void {
   // Create existing files
   File::ensureDirectoryExists(resource_path('css'));
   File::ensureDirectoryExists(resource_path('js/pages'));
+  File::ensureDirectoryExists(storage_path('app/public'));
   File::put(resource_path('css/app.css'), 'existing content');
   File::put(resource_path('js/pages/Welcome.vue'), 'existing content');
+  File::put(storage_path('app/public/.gitignore'), 'existing gitignore');
 
   $this->artisan(InstallComingSoonCommand::class, ['--force' => true])
     ->expectsOutput('Published: css/app.css')
@@ -95,6 +104,7 @@ it('overwrites files when force flag is used', function (): void {
   // Verify files were overwritten
   expect(File::get(resource_path('css/app.css')))->not()->toBe('existing content');
   expect(File::get(resource_path('js/pages/Welcome.vue')))->not()->toBe('existing content');
+  expect(File::get(storage_path('app/public/.gitignore')))->not()->toBe('existing gitignore');
 });
 
 it('creates directories if they do not exist', function (): void {
@@ -113,6 +123,7 @@ it('creates directories if they do not exist', function (): void {
   expect(File::exists(resource_path('css')))->toBeTrue();
   expect(File::exists(resource_path('js/pages')))->toBeTrue();
   expect(File::exists(storage_path('app/public/img')))->toBeTrue();
+  expect(File::exists(storage_path('app/public/.gitignore')))->toBeTrue();
 });
 
 it('handles missing source directory gracefully', function (): void {
@@ -172,15 +183,20 @@ it('handles missing source files gracefully', function (): void {
 it('sets force to true when user confirms overwrite', function (): void {
   // Create existing files
   File::ensureDirectoryExists(resource_path('css'));
+  File::ensureDirectoryExists(storage_path('app/public'));
   File::put(resource_path('css/app.css'), 'existing content');
+  File::put(storage_path('app/public/.gitignore'), 'existing gitignore');
 
   $this->artisan(InstallComingSoonCommand::class)
     ->expectsQuestion('File css/app.css already exists. Overwrite?', true)
+    ->expectsQuestion('File storage/.gitignore already exists. Overwrite?', true)
     ->expectsOutput('Published: css/app.css')
+    ->expectsOutput('Published: storage/.gitignore')
     ->assertExitCode(0);
 
-  // Verify file was overwritten
+  // Verify files were overwritten
   expect(File::get(resource_path('css/app.css')))->not()->toBe('existing content');
+  expect(File::get(storage_path('app/public/.gitignore')))->not()->toBe('existing gitignore');
 });
 
 it('creates storage directory when it does not exist', function (): void {

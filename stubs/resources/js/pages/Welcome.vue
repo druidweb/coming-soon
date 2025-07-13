@@ -8,7 +8,7 @@ const appName = computed(() => page.props.name);
 
 <template>
   <Head title="Coming Soon" />
-  <div class="flex min-h-screen flex-col items-center justify-center p-6 text-white">
+  <div class="welcome-page flex min-h-screen flex-col items-center justify-center p-6 text-white">
     <div class="w-full max-w-2xl text-center">
       <!-- Logo/Brand Area -->
       <div class="mb-8">
