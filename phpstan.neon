@@ -1,0 +1,25 @@
+includes:
+	- vendor/larastan/larastan/extension.neon
+	- vendor/nesbot/carbon/extension.neon
+
+parameters:
+	level: max
+	paths:
+		- src/
+		- tests/
+
+	# Exclude files/directories
+	excludePaths:
+		- stubs/
+		- vendor/
+
+	# Ignore known PHPUnit/Laravel testing issues
+	ignoreErrors:
+		# Laravel TestCase artisan() method not recognized by PHPStan
+		- '#Call to an undefined method PHPUnit\\Framework\\TestCase::artisan\(\)#'
+
+		# Laravel TestCase assertion methods not recognized
+		- '#Cannot call method (assertExitCode|expectsOutput|expectsOutputToContain|expectsQuestion|doesntExpectOutput)\(\) on mixed#'
+
+		# Console command option() method returns mixed but we know it's bool
+		- '#Parameter \#1 \$force of method .+ expects bool, array\|bool\|string\|null given#'
