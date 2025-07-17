@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1752427377">
-  <project timestamp="1752427377">
+<coverage generated="1752731702">
+  <project timestamp="1752731702">
     <package name="Druid\ComingSoon">
       <file name="/Users/vince/WWW/druidweb/coming/src/ComingSoonServiceProvider.php">
         <class name="Druid\ComingSoon\ComingSoonServiceProvider" namespace="Druid\ComingSoon">

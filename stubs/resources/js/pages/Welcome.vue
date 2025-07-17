@@ -19,13 +19,13 @@ const appName = computed(() => page.props.name);
         <h2 class="mb-4 text-xl font-medium text-slate-400 md:text-2xl">{{ __('Coming Soon') }}</h2>
         <h1 class="mb-4 text-2xl font-semibold text-white md:text-4xl">{{ appName }}</h1>
         <p class="text-lg text-slate-400 md:text-xl">
-          {{ __("We're working hard to bring you something amazing. Stay tuned!") }}'
+          {{ __("We're working hard to bring you something amazing. Stay tuned!") }}
         </p>
       </div>
 
       <!-- Optional Contact Info -->
       <div class="text-sm text-slate-400">
-        <p>{{ __('For inquiries, please contact us at:') }}'</p>
+        <p>{{ __('For inquiries, please contact us at:') }}</p>
         <a href="mailto:hello@jetstreamlabs.com" class="font-medium text-orange-400 hover:text-orange-600">
           {{ __('hello@jetstreamlabs.com') }}
         </a>
