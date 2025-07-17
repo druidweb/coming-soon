@@ -7,7 +7,7 @@ const appName = computed(() => page.props.name);
 </script>
 
 <template>
-  <Head title="Coming Soon" />
+  <Head title="{{ __('Coming Soon') }}" />
   <div class="welcome-page flex min-h-screen flex-col items-center justify-center p-6 text-white">
     <div class="w-full max-w-2xl text-center">
       <!-- Logo/Brand Area -->
