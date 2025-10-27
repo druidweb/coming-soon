@@ -9560,16 +9560,16 @@
         },
         {
             "name": "zenphp/fixr",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zenphporg/fixr.git",
-                "reference": "c01e8eaee3b9e61b3381927f39c1fd7deafed5d6"
+                "reference": "11ae4da25d5b6772edf62ee8db64bf56660e7f28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zenphporg/fixr/zipball/c01e8eaee3b9e61b3381927f39c1fd7deafed5d6",
-                "reference": "c01e8eaee3b9e61b3381927f39c1fd7deafed5d6",
+                "url": "https://api.github.com/repos/zenphporg/fixr/zipball/11ae4da25d5b6772edf62ee8db64bf56660e7f28",
+                "reference": "11ae4da25d5b6772edf62ee8db64bf56660e7f28",
                 "shasum": ""
             },
             "require": {
@@ -9577,16 +9577,16 @@
                 "ext-mbstring": "*",
                 "ext-tokenizer": "*",
                 "ext-xml": "*",
-                "php": "^8.2.0"
+                "php": "^8.3 || ^8.4"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "3.61.1",
-                "illuminate/view": "^10.0|11.0",
-                "larastan/larastan": "2.9.8",
-                "laravel-zero/framework": "10.4.0",
-                "mockery/mockery": "1.6.12",
-                "nunomaduro/termwind": "1.15.1",
-                "pestphp/pest": "2.35.0"
+                "friendsofphp/php-cs-fixer": "^3.61.1",
+                "illuminate/view": "^12.0",
+                "larastan/larastan": "^3.7.2",
+                "laravel-zero/framework": "^12.0.2",
+                "mockery/mockery": "^1.6.12",
+                "nunomaduro/termwind": "^2.3.2",
+                "pestphp/pest": "^4.1.2"
             },
             "bin": [
                 "builds/fixr"
@@ -9622,7 +9622,7 @@
                 "issues": "https://github.com/zenphporg/fixr/issues",
                 "source": "https://github.com/zenphporg/fixr"
             },
-            "time": "2025-02-17T06:57:28+00:00"
+            "time": "2025-10-24T15:57:32+00:00"
         }
     ],
     "aliases": [],
