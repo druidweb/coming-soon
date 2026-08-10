@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1752731702">
-  <project timestamp="1752731702">
+<coverage generated="1786344969">
+  <project timestamp="1786344969" name="Clover Coverage">
     <package name="Druid\ComingSoon">
       <file name="/Users/vince/WWW/druidweb/coming/src/ComingSoonServiceProvider.php">
         <class name="Druid\ComingSoon\ComingSoonServiceProvider" namespace="Druid\ComingSoon">
@@ -18,15 +18,14 @@
         <line num="31" type="stmt" count="11"/>
         <line num="32" type="stmt" count="11"/>
         <line num="33" type="stmt" count="11"/>
-        <line num="41" type="method" name="register" visibility="public" complexity="1" crap="1" count="11"/>
-        <line num="42" type="stmt" count="11"/>
+        <line num="42" type="method" name="register" visibility="public" complexity="1" crap="1" count="11"/>
         <metrics loc="44" ncloc="33" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="12" coveredstatements="12" elements="14" coveredelements="14"/>
       </file>
     </package>
     <package name="Druid\ComingSoon\Console\Commands">
       <file name="/Users/vince/WWW/druidweb/coming/src/Console/Commands/InstallComingSoonCommand.php">
         <class name="Druid\ComingSoon\Console\Commands\InstallComingSoonCommand" namespace="Druid\ComingSoon\Console\Commands">
-          <metrics complexity="18" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="66" coveredstatements="66" elements="70" coveredelements="70"/>
+          <metrics complexity="18" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="67" elements="71" coveredelements="71"/>
         </class>
         <line num="32" type="method" name="handle" visibility="public" complexity="3" crap="3" count="10"/>
         <line num="34" type="stmt" count="10"/>
@@ -74,33 +73,34 @@
         <line num="112" type="stmt" count="7"/>
         <line num="113" type="stmt" count="7"/>
         <line num="114" type="stmt" count="7"/>
-        <line num="118" type="stmt" count="7"/>
+        <line num="115" type="stmt" count="7"/>
         <line num="119" type="stmt" count="7"/>
         <line num="120" type="stmt" count="7"/>
-        <line num="123" type="stmt" count="7"/>
+        <line num="121" type="stmt" count="7"/>
         <line num="124" type="stmt" count="7"/>
         <line num="125" type="stmt" count="7"/>
         <line num="126" type="stmt" count="7"/>
         <line num="127" type="stmt" count="7"/>
         <line num="128" type="stmt" count="7"/>
-        <line num="135" type="method" name="publishFile" visibility="protected" complexity="7" crap="7" count="10"/>
-        <line num="137" type="stmt" count="10"/>
-        <line num="138" type="stmt" count="1"/>
-        <line num="140" type="stmt" count="1"/>
-        <line num="144" type="stmt" count="10"/>
-        <line num="145" type="stmt" count="2"/>
-        <line num="146" type="stmt" count="1"/>
-        <line num="148" type="stmt" count="1"/>
-        <line num="150" type="stmt" count="1"/>
-        <line num="155" type="stmt" count="10"/>
+        <line num="129" type="stmt" count="7"/>
+        <line num="136" type="method" name="publishFile" visibility="protected" complexity="7" crap="7" count="10"/>
+        <line num="138" type="stmt" count="10"/>
+        <line num="139" type="stmt" count="1"/>
+        <line num="141" type="stmt" count="1"/>
+        <line num="145" type="stmt" count="10"/>
+        <line num="146" type="stmt" count="2"/>
+        <line num="147" type="stmt" count="1"/>
+        <line num="149" type="stmt" count="1"/>
+        <line num="151" type="stmt" count="1"/>
         <line num="156" type="stmt" count="10"/>
-        <line num="157" type="stmt" count="5"/>
-        <line num="161" type="stmt" count="10"/>
-        <line num="162" type="stmt" count="9"/>
-        <line num="164" type="stmt" count="1"/>
-        <metrics loc="168" ncloc="137" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="66" coveredstatements="66" elements="70" coveredelements="70"/>
+        <line num="157" type="stmt" count="10"/>
+        <line num="158" type="stmt" count="5"/>
+        <line num="162" type="stmt" count="10"/>
+        <line num="163" type="stmt" count="9"/>
+        <line num="165" type="stmt" count="1"/>
+        <metrics loc="169" ncloc="138" classes="1" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="67" coveredstatements="67" elements="71" coveredelements="71"/>
       </file>
     </package>
-    <metrics files="2" loc="212" ncloc="170" classes="2" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="78" coveredstatements="78" elements="84" coveredelements="84"/>
+    <metrics files="2" loc="213" ncloc="171" classes="2" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="79" coveredstatements="79" elements="85" coveredelements="85"/>
   </project>
 </coverage>

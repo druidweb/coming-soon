@@ -3,14 +3,17 @@
   "description": "Coming soon page and image publisher for Jetstream Labs projects.",
   "type": "library",
   "license": "MIT",
+  "require": {
+    "php": "^8.5"
+  },
   "require-dev": {
-    "larastan/larastan": "^3.5",
-    "laravel/framework": "^12.20",
-    "orchestra/testbench": "^10.4",
-    "pestphp/pest": "^3.8",
-    "pestphp/pest-plugin": "^3.0",
-    "rector/rector": "^2.1",
-    "zenphp/fixr": "^1.0"
+    "larastan/larastan": "^3.10.0",
+    "laravel/framework": "^13.24.0",
+    "orchestra/testbench": "^11.0",
+    "pestphp/pest": "^5.0.4",
+    "pestphp/pest-plugin": "^5.0",
+    "rector/rector": "^2.6.1",
+    "zenphp/fixr": "^1.0.4"
   },
   "autoload": {
     "psr-4": {

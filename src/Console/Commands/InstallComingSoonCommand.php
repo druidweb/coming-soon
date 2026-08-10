@@ -33,7 +33,7 @@ class InstallComingSoonCommand extends Command
   {
     $this->info('Installing Coming Soon package...');
 
-    $force = $this->option('force');
+    $force = (bool) $this->option('force');
     $assetsOnly = $this->option('assets-only');
     $resourcesOnly = $this->option('resources-only');
 
@@ -51,7 +51,7 @@ class InstallComingSoonCommand extends Command
     $this->newLine();
     $this->info('Next steps:');
     $this->line('1. Make sure your route points to the Welcome.vue component');
-    $this->line('2. Run "npm run build" to compile your assets');
+    $this->line('2. Run "bun run build" to compile your assets');
     $this->line('3. Run "php artisan storage:link" to link storage assets');
 
     return Command::SUCCESS;
@@ -109,9 +109,10 @@ class InstallComingSoonCommand extends Command
       $destinationPath = $destinationDir.'/'.$relativePath;
 
       // Handle special case for gitignore.txt -> .gitignore
+      $displayPath = "storage/{$relativePath}";
       if ($relativePath === 'gitignore.txt') {
         $destinationPath = $destinationDir.'/.gitignore';
-        $relativePath = '.gitignore';
+        $displayPath = 'storage/app/public/.gitignore';
       }
 
       // Create subdirectories if they don't exist
@@ -121,7 +122,7 @@ class InstallComingSoonCommand extends Command
       }
 
       $this->publishFile(
-        "storage/{$relativePath}",
+        $displayPath,
         $file->getPathname(),
         $destinationPath,
         $force

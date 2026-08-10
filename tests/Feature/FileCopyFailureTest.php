@@ -19,7 +19,6 @@ it('shows error message when file copy fails', function (): void {
   // Use reflection to access the protected publishFile method
   $reflection = new \ReflectionClass($command);
   $reflectionMethod = $reflection->getMethod('publishFile');
-  $reflectionMethod->setAccessible(true);
 
   // Mock File facade completely to control the copy failure
   File::shouldReceive('exists')

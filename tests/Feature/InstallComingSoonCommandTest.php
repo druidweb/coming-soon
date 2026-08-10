@@ -75,10 +75,10 @@ it('prompts for confirmation when files already exist', function (): void {
   $this->artisan(InstallComingSoonCommand::class)
     ->expectsQuestion('File css/app.css already exists. Overwrite?', false)
     ->expectsQuestion('File js/pages/Welcome.vue already exists. Overwrite?', false)
-    ->expectsQuestion('File storage/.gitignore already exists. Overwrite?', false)
+    ->expectsQuestion('File storage/app/public/.gitignore already exists. Overwrite?', false)
     ->expectsOutput('Skipped: css/app.css')
     ->expectsOutput('Skipped: js/pages/Welcome.vue')
-    ->expectsOutput('Skipped: storage/.gitignore')
+    ->expectsOutput('Skipped: storage/app/public/.gitignore')
     ->assertExitCode(0);
 
   // Verify files were not overwritten
@@ -189,9 +189,9 @@ it('sets force to true when user confirms overwrite', function (): void {
 
   $this->artisan(InstallComingSoonCommand::class)
     ->expectsQuestion('File css/app.css already exists. Overwrite?', true)
-    ->expectsQuestion('File storage/.gitignore already exists. Overwrite?', true)
+    ->expectsQuestion('File storage/app/public/.gitignore already exists. Overwrite?', true)
     ->expectsOutput('Published: css/app.css')
-    ->expectsOutput('Published: storage/.gitignore')
+    ->expectsOutput('Published: storage/app/public/.gitignore')
     ->assertExitCode(0);
 
   // Verify files were overwritten
